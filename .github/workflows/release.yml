@@ -61,7 +61,7 @@ jobs:
           security set-key-partition-list -S apple-tool:,apple: \
             -s -k "" "$KEYCHAIN_PATH"
 
-          security list-keychain -d user -s "$KEYCHAIN_PATH" login.keychain-db
+          security list-keychain -d user -s "$KEYCHAIN_PATH" $(security list-keychain -d user | tr -d '"')
 
       - name: Build and archive
         env:

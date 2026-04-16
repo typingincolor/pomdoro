@@ -1,6 +1,6 @@
 # Pomodoro
 
-A minimal Pomodoro timer that lives in your macOS menu bar.
+A minimal Pomodoro timer for macOS.
 
 ![Pomodoro](docs/screenshot.png)
 
@@ -12,7 +12,6 @@ A minimal Pomodoro timer that lives in your macOS menu bar.
 - **Alarm** loops until you silence it — never miss the end of a session
 - **Keyboard driven** — click digits to edit, use arrow keys to adjust, spacebar to play/pause, R to reset, 1/2 to switch focus
 - **Customisable** digit colour, default times, and window size
-- **Menu bar only** — no dock icon, stays out of your way
 
 ## Install
 
@@ -38,7 +37,7 @@ Requires Xcode 15+ and macOS 14+.
 
 ## Usage
 
-Click the timer icon in the menu bar to open the timer panel. Click on the digits to edit them, then press play.
+Launch Pomodoro to open the timer window. Click on the digits to edit them, then press play.
 
 **Chained mode:** Click the chain link between the two timers to link them. Timer 2 starts automatically when Timer 1 finishes.
 

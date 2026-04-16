@@ -31,27 +31,16 @@ struct PomodoroApp: App {
     }
 
     var body: some Scene {
-        MenuBarExtra {
+        WindowGroup("Pomodoro") {
             MainTimerView(
                 settings: settings,
                 scale: settings.windowSize.scaleFactor,
                 onOpenSettings: { appDelegate.openSettings(settings: settings) }
             )
             .environment(manager)
-        } label: {
-            menuBarLabel
+            .frame(width: settings.windowSize.width)
+            .fixedSize(horizontal: true, vertical: true)
         }
-        .menuBarExtraStyle(.window)
-    }
-
-    @ViewBuilder
-    private var menuBarLabel: some View {
-        if manager.timer1.isRunning || manager.timer2.isRunning {
-            let timer = manager.timer1.isRunning ? manager.timer1 : manager.timer2
-            Text(String(format: "%02d:%02d", timer.displayMinutes, timer.displaySeconds))
-                .monospacedDigit()
-        } else {
-            Image(systemName: "timer")
-        }
+        .windowResizability(.contentSize)
     }
 }
